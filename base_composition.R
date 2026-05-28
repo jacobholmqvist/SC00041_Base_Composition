@@ -1,9 +1,10 @@
 # Required packages
+library(BiocManager) # Required for installation of Biostrings
 library(Biostrings)
 library(ggplot2)
 
 # Set input and output file paths directly
-input_file <- "data/sequence.fasta"
+input_file <- "data/fasta.fa"
 output_file <- "output/base_plot.png"
 
 # Read fasta
@@ -24,4 +25,3 @@ p <- ggplot(base_df, aes(x = Base, y = Count, fill = Base)) +
 ggsave(output_file, plot = p)
 
 print(paste("Base composition plot saved to", output_file))
-
